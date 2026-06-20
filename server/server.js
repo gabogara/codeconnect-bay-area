@@ -1,21 +1,9 @@
-const express = require("express");
-const cors = require("cors");
+require("dotenv").config();
 
-const app = express();
+const app = require("./app");
 
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "Welcome to the CodeConnect Bay Area API",
-  });
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-app.use((req, res) => {
-  res.status(404).json({
-    error: "Route not found",
-  });
-});
-
-module.exports = app;

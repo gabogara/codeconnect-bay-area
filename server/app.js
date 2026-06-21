@@ -30,6 +30,22 @@ app.get("/api/health", async (req, res) => {
   }
 });
 
+app.get("/api/test-events", async (req, res) => {
+  try {
+    const result = await db.query(
+      "SELECT * FROM events ORDER BY event_date ASC"
+    );
+
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error("Error getting events:", error);
+
+    res.status(500).json({
+      error: "Unable to get events",
+    });
+  }
+});
+
 app.use((req, res) => {
   res.status(404).json({
     error: "Route not found",

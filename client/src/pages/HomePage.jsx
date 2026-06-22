@@ -3,9 +3,9 @@ import locations from "../data/locations";
 
 const HomePage = () => {
   return (
-    <main>
-      <section>
-        <p>Bay Area technology community</p>
+    <main className="page">
+      <section className="hero">
+        <p className="eyebrow">Bay Area technology community</p>
 
         <h1>Find events that move your tech career forward.</h1>
 

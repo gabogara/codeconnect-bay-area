@@ -2,10 +2,12 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <header>
-      <Link to="/">CodeConnect Bay Area</Link>
+    <header className="navbar">
+      <Link className="navbar__brand" to="/">
+        CodeConnect Bay Area
+      </Link>
 
-      <nav>
+      <nav className="navbar__links" aria-label="Main navigation">
         <Link to="/">Home</Link>
         <Link to="/events">All Events</Link>
       </nav>

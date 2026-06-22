@@ -1,3 +1,6 @@
+import LocationCard from "../components/LocationCard";
+import locations from "../data/locations";
+
 const HomePage = () => {
   return (
     <main>
@@ -13,8 +16,22 @@ const HomePage = () => {
       </section>
 
       <section>
-        <h2>Explore by location</h2>
-        <p>Choose a city to view its events.</p>
+        <div>
+          <div>
+            <p className="eyebrow">Choose your city</p>
+            <h2>Explore by location</h2>
+          </div>
+
+          <p>
+            Select a city to discover technology, career, and networking events.
+          </p>
+        </div>
+
+        <div>
+          {locations.map((location) => (
+            <LocationCard key={location.slug} location={location} />
+          ))}
+        </div>
       </section>
     </main>
   );

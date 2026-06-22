@@ -1,11 +1,22 @@
-import React from "react";
+import { Route, Routes } from "react-router";
+import Navbar from "./components/Navbar";
+import EventsPage from "./pages/EventsPage";
+import HomePage from "./pages/HomePage";
+import LocationPage from "./pages/LocationPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   return (
-    <main>
-      <h1>CodeConnect Bay Area</h1>
-      <p>Discover technology, career, and networking events near you.</p>
-    </main>
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/locations/:location" element={<LocationPage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 };
 

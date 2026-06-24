@@ -15,8 +15,8 @@ const HomePage = () => {
         </p>
       </section>
 
-      <section>
-        <div>
+      <section className="locations-section">
+        <div className="locations-section__header">
           <div>
             <p className="eyebrow">Choose your city</p>
             <h2>Explore by location</h2>
@@ -27,7 +27,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div>
+        <div className="locations-grid">
           {locations.map((location) => (
             <LocationCard key={location.slug} location={location} />
           ))}
